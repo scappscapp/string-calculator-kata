@@ -1,0 +1,26 @@
+{
+  "name": "string-calculator-kata",
+  "version": "1.0.0",
+  "description": "The following is a TDD Kata, an exercise in coding, refactoring and test-first.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./app/index.js",
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scappscapp/string-calculator-kata.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scappscapp/string-calculator-kata/issues"
+  },
+  "homepage": "https://github.com/scappscapp/string-calculator-kata#readme",
+  "dependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.4.0"
+  }
+}
