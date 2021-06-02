@@ -13,7 +13,7 @@ class StringCalculator{
             let checkInitialDelimiter = startingRegex.test(numbers);
 
             if(checkInitialDelimiter) {
-                delimiter = numbers.match(startingRegex);
+                delimiter = numbers.match(startingRegex)[0];
                 numArray = numbers.split(new RegExp('[\n' + delimiter + ']+')).slice(1);
             }else{
                 numArray = numbers.split(new RegExp('[\n' + delimiter + ']+'));
