@@ -1,4 +1,4 @@
-export {StringCalculator};
+import { NegativeNumbersNotAllowed } from "./negativeNumberError.js";
 
 class StringCalculator{
     
@@ -19,7 +19,7 @@ class StringCalculator{
             }
 
             if (numArray.some( elem => parseInt(elem) < 0)){
-                throw new Error("negatives not allowed: " + numArray.filter(elem => parseInt(elem) < 0));
+                throw new NegativeNumbersNotAllowed("negatives not allowed: " + numArray.filter(elem => parseInt(elem) < 0));
             }
 
             result = numArray.filter( elem => parseInt(elem) <= 1000).reduce((elem1, elem2) => parseInt(elem1) + parseInt(elem2));
@@ -27,3 +27,5 @@ class StringCalculator{
         return result;
     }
 }
+
+export {StringCalculator};
