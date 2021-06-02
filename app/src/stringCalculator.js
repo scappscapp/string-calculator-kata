@@ -5,17 +5,18 @@ class StringCalculator{
     add(numbers) {
         let result = 0;
         let delimiter = ',';
-        
+        let startingRegex = /(?<=\/\/).*?(?=\n)/;
+
         if(numbers.trim()){
 
             let numArray = [];
-            let delimiterString = numbers.match(/(?<=\/\/).*?(?=\n)/);
+            let checkInitialDelimiter = startingRegex.test(numbers);
 
-            if(delimiterString) {
-                delimiter = delimiterString[0];
-                numArray = numbers.split(new RegExp('[\n' + delimiter + ']+','g')).slice(1);
+            if(checkInitialDelimiter) {
+                delimiter = numbers.match(startingRegex);
+                numArray = numbers.split(new RegExp('[\n' + delimiter + ']+')).slice(1);
             }else{
-                numArray = numbers.split(new RegExp('[\n' + delimiter + ']+','g'));
+                numArray = numbers.split(new RegExp('[\n' + delimiter + ']+'));
             }
 
             if (numArray.some( elem => parseInt(elem) < 0)){
